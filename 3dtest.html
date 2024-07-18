@@ -1,13 +1,14 @@
 <style>
-    #default-example {
-        background: linear-gradient(skyblue, khaki);
-        perspective: 550px
+    :root {
+        --side: linear-gradient(180deg, #ffffff 0%, #ffffff 40%, #6cf068 40%, #6cf068 50%, #ffffff00 50%, #ffffff00 100%);
+        --unit: 10px;
     }
 
-    #example-element {
-        width: 80px;
-        height: 80px;
-        transform-style: preserve-3d
+    /* piece: 4 units x 6 units x 8 unit */
+    .piece {
+        width: calc(8 * var(--unit));
+        height: calc(8 * var(--unit));
+        transform-style: preserve-3d;
     }
 
     .face {
@@ -18,53 +19,72 @@
         height: 100%;
         position: absolute;
         backface-visibility: inherit;
-        font-size: 60px;
-        color: #fff
+        font-size: calc(6 * var(--unit));
+        color: magenta;
     }
 
     .face1 {
-        transform: translateZ(40px)
+        width: 75%;
+        transform: translateX(calc(1 * var(--unit))) translateZ(calc(4 * var(--unit)));
+        background: white;
+        /* so as to hide the back face even when the image is not loaded yet */
     }
 
     .face2 {
         width: 75%;
         background: #4be245;
-        transform: rotateY(180deg) translateX(-10px) translateZ(0px)
+        transform: rotateY(180deg) translateX(calc(-1 * var(--unit)))
     }
 
-    .face3 {
-        background: linear-gradient(90deg, #ffffff 0%, #ffffff 40%, #6cf068 40%, #6cf068 50%, #ffffff00 50%, #ffffff00 100%);
-        transform: rotateY(90deg) translateZ(30px)
+    .side-faceA {
+        background: var(--side);
+        transform: rotateX(-90deg) rotateY(90deg) translateZ(calc(3 * var(--unit)))
     }
 
-    .face4 {
-        background: linear-gradient(270deg, #ffffff 0%, #ffffff 40%, #6cf068 40%, #6cf068 50%, #ffffff00 50%, #ffffff00 100%);
-        transform: rotateY(-90deg) translateZ(30px)
-    }
-
-    .face5 {
+    .side-faceB {
         width: 75%;
-
-        background: linear-gradient(0deg, #ffffff 0%, #ffffff 40%, #6cf068 40%, #6cf068 50%, #ffffff00 50%, #ffffff00 100%);
-        transform: rotateX(90deg) translateX(10px) translateZ(40px)
+        background: var(--side);
+        transform: rotateY(180deg) rotateX(90deg) translateX(calc(-1 * var(--unit))) translateZ(calc(4 * var(--unit)))
     }
 
-    .face6 {
+    .side-faceC {
+        background: var(--side);
+        transform: rotateX(-90deg) rotateY(-90deg) translateZ(calc(3 * var(--unit)))
+    }
+
+    .side-faceD {
         width: 75%;
-        background: linear-gradient(180deg, #ffffff 0%, #ffffff 40%, #6cf068 40%, #6cf068 50%, #ffffff00 50%, #ffffff00 100%);
-        ;
-        transform: rotateX(-90deg) translateX(10px) translateZ(40px);
+        background: var(--side);
+        transform: rotateX(-90deg) translateX(calc(1 * var(--unit))) translateZ(calc(4 * var(--unit)));
     }
 </style>
 
+<!-- 
+|       | SVG unit | CSS unit|
+|-------|----------|---------|
+|height | 105.83333| calc(8 * var(--unit))    | × 127/96
+|width  | 79.375   | calc(6 * var(--unit))    | × 127/96
+|rx=ry  | 9.8560982| 7.450px | × 127/96
+-->
+
 <body style="background-color: blanchedalmond;">
-    <div id="example-element" class="transition-all"
-        style="transform: translate(100px, 100px) rotate3d(-1, -1, -1, 170deg);">
-        <div class="face face1"><img src="./assets/assets/1筒.png" height="80"></div>
-        <div class="face face2"></div>
-        <div class="face face3"></div>
-        <div class="face face4"></div>
-        <div class="face face5"></div>
-        <div class="face face6"></div>
+    <div class="piece" style="transform: translate(100px, 100px) rotate3d(-1, -1, -1, 160deg);">
+        <div class="face face1"><img src="./assets/1萬.png" height="80"></div>
+        <div class="face face2">2</div>
+        <div class="face side-faceA">A</div>
+        <div class="face side-faceB">B</div>
+        <div class="face side-faceC">C</div>
+        <div class="face side-faceD">D</div>
     </div>
+
+    <div class="piece" style="transform: translate(100px, 150px) rotate3d(1,0.3, 0, 30deg);">
+        <div class="face face1"><img src="./assets/1萬.png" height="80"></div>
+        <div class="face face2">2</div>
+        <div class="face side-faceA">A</div>
+        <div class="face side-faceB">B</div>
+        <div class="face side-faceC">C</div>
+        <div class="face side-faceD">D</div>
+    </div>
+
+
 </body>
