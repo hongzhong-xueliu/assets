@@ -1,12 +1,14 @@
 :root {
     --side: linear-gradient(180deg, #f3f3f3 0%, #f3f3f3 35%, hsl(234, 82%, 67%) 35%, hsl(234, 82%, 67%) 50%, #ffffff00 50%, #ffffff00 100%);
     --unit: 10px;
+    --piece-width: calc(6 * var(--unit));
+    --piece-height: calc(8 * var(--unit));
 }
 
 /* piece: 4 units x 6 units x 8 unit */
 .piece {
-    width: calc(8 * var(--unit));
-    height: calc(8 * var(--unit));
+    width: var(--piece-height); /* 意図的 */
+    height: var(--piece-height);
     transform-style: preserve-3d;
 }
 
@@ -14,8 +16,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    width: var(--piece-height);
+    height: var(--piece-height);
     position: absolute;
     backface-visibility: inherit;
     font-size: calc(6 * var(--unit));
@@ -23,14 +25,14 @@
 }
 
 .face1 {
-    width: 75%;
+    width: var(--piece-width);
     transform: translateX(calc(1 * var(--unit))) translateZ(calc(4 * var(--unit)));
     background: white;
     /* so as to hide the back face even when the image is not loaded yet */
 }
 
 .face2 {
-    width: 75%;
+    width: var(--piece-width);
     background: hsl(234, 73%, 58%);
     transform: rotateY(180deg) translateX(calc(-1 * var(--unit)))
 }
@@ -41,7 +43,7 @@
 }
 
 .side-faceB {
-    width: 75%;
+    width: var(--piece-width);
     background: var(--side);
     transform: rotateY(180deg) rotateX(90deg) translateX(calc(-1 * var(--unit))) translateZ(calc(4 * var(--unit)))
 }
@@ -52,7 +54,7 @@
 }
 
 .side-faceD {
-    width: 75%;
+    width: var(--piece-width);
     background: var(--side);
     transform: rotateX(-90deg) translateX(calc(1 * var(--unit))) translateZ(calc(4 * var(--unit)));
 }
