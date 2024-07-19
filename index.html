@@ -1,5 +1,27 @@
 <!DOCTYPE html>
 
+<head>
+    <link rel="stylesheet" href="3d.css">
+    <style>
+        :root {
+            --piece-margin: var(--unit) / 2;
+            --piece-width: calc(6 * var(--unit));
+            --piece-height: calc(8 * var(--unit));
+            --piece-stride: calc(var(--piece-width) + var(--piece-margin));
+            --河-center-y: 330px;
+            --河-center-x: 445px;
+            --corner-margin: 10px; /* 「自分の河の右上」と「下家の河の（自分から見た）左下の間」をどれくらい離すか */
+            --each-河-width: calc(6 * var(--piece-width) + 5 * var(--piece-margin));
+
+            --自家-top: calc(var(--河-center-y) + var(--each-河-width) / 2 + var(--corner-margin));
+            --自家-left: calc(var(--河-center-x) - var(--each-河-width) / 2);
+
+            --下家-left: calc(var(--河-center-x) + var(--each-河-width) / 2 + var(--corner-margin));
+            --下家-bottom: calc(var(--河-center-y) + var(--each-河-width) / 2);
+        }
+    </style>
+</head>
+
 <body style="background-color: #3f7528; perspective: 2400px;">
     <div style="position: absolute; top: 700px; left: 15px">
         <img alt="2萬" src="assets/2萬.png" width="60" height="80">
@@ -17,47 +39,180 @@
         <img alt="1索" src="assets/1索.png" width="60" height="80">
     </div>
 
-   <div style="transform: translateY(200px) rotate3d(1, 0, 0, 50deg) translateY(20px) translateX(250px)">
-    <div style="position: relative;">
-        <div style="position: absolute; top: 250px">
-            <img alt="5筒" src="assets/5筒.png" width="60" height="80">
-            <img alt="8索" src="assets/8索.png" width="60" height="80">
-            <img alt="7索" src="assets/7索.png" width="60" height="80">
-            <img alt="3索" src="assets/3索.png" width="60" height="80">
-            <img alt="1索" src="assets/1索.png" width="60" height="80">
-            <img alt="6筒" src="assets/6筒.png" width="60" height="80">
+    <div style="perspective: 2400px; position: relative;">
+        <!-- ↓ 以下、自家 -->
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 50deg) translate(var(--自家-left), var(--自家-top));">
+            <div class="face face1"><img src="./assets/5筒.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
         </div>
 
-        <div style="position: absolute; left: 250px; transform: rotate(-90deg)">
-            <img alt="8萬" src="assets/8萬.png" width="60" height="80">
-            <img alt="8筒" src="assets/8筒.png" width="60" height="80">
-            <img alt="4萬" src="assets/4萬.png" width="60" height="80">
-            <img alt="4筒" src="assets/4筒.png" width="60" height="80">
-            <img alt="1萬" src="assets/1萬.png" width="60" height="80">
-            <img alt="1筒" src="assets/1筒.png" width="60" height="80">
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 50deg) translate(calc(var(--自家-left) + var(--piece-stride)), var(--自家-top));">
+            <div class="face face1"><img src="./assets/8索.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
         </div>
 
-        <div style="position: absolute; top: -250px; transform: rotate(180deg);">
-            <img alt="9筒" src="assets/9筒.png" width="60" height="80">
-            <img alt="4筒" src="assets/4筒.png" width="60" height="80">
-            <img alt="8筒" src="assets/8筒.png" width="60" height="80">
-            <img alt="6索" src="assets/6索.png" width="60" height="80">
-            <img alt="3索" src="assets/3索.png" width="60" height="80">
-            <img alt="1筒" src="assets/1筒.png" width="60" height="80">
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 50deg) translate(calc(var(--自家-left) + var(--piece-stride) * 2), var(--自家-top));">
+            <div class="face face1"><img src="./assets/7索.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 50deg) translate(calc(var(--自家-left) + var(--piece-stride) * 3), var(--自家-top));">
+            <div class="face face1"><img src="./assets/3索.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 50deg) translate(calc(var(--自家-left) + var(--piece-stride) * 4), var(--自家-top));">
+            <div class="face face1"><img src="./assets/1索.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 50deg) translate(calc(var(--自家-left) + var(--piece-stride) * 5), var(--自家-top));">
+            <div class="face face1"><img src="./assets/6筒.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <!-- ↑ 以上、自家 -->
+        <!-- ↓ 以下、下家。レンダリングの順番の都合上、逆向きに並ぶことになる。 -->
+
+        <div class="piece" style="position: absolute;
+        transform: rotate3d(1, 0, 0, 50deg) 
+        translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 5)) 
+        translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
+        ">
+            <div class="face face1"><img src="./assets/1筒.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece" style="position: absolute;
+        transform: rotate3d(1, 0, 0, 50deg) 
+        translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 4)) 
+        translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
+        ">
+            <div class="face face1"><img src="./assets/1萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+
+        <div class="piece" style="position: absolute;
+        transform: rotate3d(1, 0, 0, 50deg) 
+        translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 3)) 
+        translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
+        ">
+            <div class="face face1"><img src="./assets/4筒.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
         </div>
 
         
-        <div style="position: absolute; left: -250px; transform: rotate(90deg)">
-            <img alt="6索" src="assets/6索.png" width="60" height="80">
-            <img alt="4筒" src="assets/4筒.png" width="60" height="80">
-            <img alt="5筒" src="assets/5筒.png" width="60" height="80">
-            <img alt="7筒" src="assets/7筒.png" width="60" height="80">
-            <img alt="3萬" src="assets/3萬.png" width="60" height="80">
-            <img alt="4萬" src="assets/4萬.png" width="60" height="80">
+        <div class="piece" style="position: absolute;
+        transform: rotate3d(1, 0, 0, 50deg) 
+        translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 2)) 
+        translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
+        ">
+            <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
         </div>
 
+        <div class="piece" style="position: absolute;
+        transform: rotate3d(1, 0, 0, 50deg) 
+        translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride))) 
+        translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
+        ">
+            <div class="face face1"><img src="./assets/8筒.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece" style="position: absolute;
+             transform: rotate3d(1, 0, 0, 50deg) 
+             translate(var(--下家-left), var(--下家-bottom)) 
+             translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
+             ">
+            <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+
+
+
     </div>
-   </div>
+
+
+    <div style="transform: translateY(200px) rotate3d(1, 0, 0, 50deg) translateY(20px) translateX(250px)">
+        <div style="position: relative;">
+            <div style="position: absolute; top: -250px; transform: rotate(180deg);">
+                <img alt="9筒" src="assets/9筒.png" width="60" height="80">
+                <img alt="4筒" src="assets/4筒.png" width="60" height="80">
+                <img alt="8筒" src="assets/8筒.png" width="60" height="80">
+                <img alt="6索" src="assets/6索.png" width="60" height="80">
+                <img alt="3索" src="assets/3索.png" width="60" height="80">
+                <img alt="1筒" src="assets/1筒.png" width="60" height="80">
+            </div>
+
+
+            <div style="position: absolute; left: -250px; transform: rotate(90deg)">
+                <img alt="6索" src="assets/6索.png" width="60" height="80">
+                <img alt="4筒" src="assets/4筒.png" width="60" height="80">
+                <img alt="5筒" src="assets/5筒.png" width="60" height="80">
+                <img alt="7筒" src="assets/7筒.png" width="60" height="80">
+                <img alt="3萬" src="assets/3萬.png" width="60" height="80">
+                <img alt="4萬" src="assets/4萬.png" width="60" height="80">
+            </div>
+
+        </div>
+    </div>
 
 
 </body>
