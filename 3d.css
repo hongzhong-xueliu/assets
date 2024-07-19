@@ -1,5 +1,5 @@
 :root {
-    --side: linear-gradient(180deg, #f3f3f3 0%, #f3f3f3 40%, #6cf068 40%, #6cf068 50%, #ffffff00 50%, #ffffff00 100%);
+    --side: linear-gradient(180deg, #f3f3f3 0%, #f3f3f3 35%, hsl(234, 82%, 67%) 35%, hsl(234, 82%, 67%) 50%, #ffffff00 50%, #ffffff00 100%);
     --unit: 10px;
 }
 
@@ -31,7 +31,7 @@
 
 .face2 {
     width: 75%;
-    background: #4be245;
+    background: hsl(234, 73%, 58%);
     transform: rotateY(180deg) translateX(calc(-1 * var(--unit)))
 }
 

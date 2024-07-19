@@ -31,23 +31,7 @@
     </style>
 </head>
 
-<body style="background-color: #3f7528; perspective: 2400px;">
-    <div style="position: absolute; top: 700px; left: 15px">
-        <img alt="2萬" src="assets/2萬.png" width="60" height="80">
-        <img alt="3萬" src="assets/3萬.png" width="60" height="80">
-        <img alt="3萬" src="assets/3萬.png" width="60" height="80">
-        <img alt="4萬" src="assets/4萬.png" width="60" height="80">
-        <img alt="5萬" src="assets/5萬.png" width="60" height="80">
-        <img alt="5萬" src="assets/5萬.png" width="60" height="80">
-        <img alt="5萬" src="assets/5萬.png" width="60" height="80">
-        <img alt="7萬" src="assets/7萬.png" width="60" height="80">
-        <img alt="8萬" src="assets/8萬.png" width="60" height="80">
-        <img alt="8萬" src="assets/8萬.png" width="60" height="80">
-        <img alt="8萬" src="assets/8萬.png" width="60" height="80">
-        <img alt="9萬" src="assets/9萬.png" width="60" height="80">
-        <img alt="1索" src="assets/1索.png" width="60" height="80">
-    </div>
-
+<body style="background-color: #3f7528;">
     <div style="perspective: 2400px; position: relative;">
         <!-- ↓ 以下、自家 -->
         <div class="piece"
@@ -354,6 +338,139 @@
         translate(-70px, -10px) rotateZ(90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
         ">
             <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+    </div>
+
+
+    <div style="perspective: 2400px; position: relative;">
+        <!-- ↓ 以下、自家手牌 -->
+        <div class="piece" style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(30px, 700px);">
+            <div class="face face1"><img src="./assets/2萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 1 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 2 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 3 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 4 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 5 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 6 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 7 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/7萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 8 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 9 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 10 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 11 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/9萬.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+
+        <div class="piece"
+            style="position: absolute; transform: rotate3d(1, 0, 0, 5deg) translate(calc(30px + 12 * var(--piece-stride)), 700px);">
+            <div class="face face1"><img src="./assets/1索.png" height="80"></div>
             <div class="face face2"></div>
             <div class="face side-faceA"></div>
             <div class="face side-faceB"></div>
