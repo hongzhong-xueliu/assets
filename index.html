@@ -100,80 +100,59 @@
                 </div>
             </div><!-- div#自家-河 -->
 
-            <!-- ↓ 以下、下家 -->
+            <div id="下家-河" class="three-d" style="transform: translate(var(--下家-left), var(--下家-bottom));">
+                <div class="three-d"
+                    style="width: var(--piece-width); height: var(--piece-height); transform: translate(0px, calc(0px - var(--piece-stride) * 0)) translate(20px, -60px) rotateZ(-90deg); ">
+                    <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
 
-            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
-transform: 
-translate(var(--下家-left), var(--下家-bottom)) 
-translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
-">
-                <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
+                <div class="three-d"
+                    style="width: var(--piece-width); height: var(--piece-height); transform: translate(0px, calc(0px - var(--piece-stride) * 1)) translate(20px, -60px) rotateZ(-90deg); ">
+                    <div class="face face1"><img src="./assets/8筒.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
 
-            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
-            transform:
-            translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 1)) 
-            translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
-            ">
-                <div class="face face1"><img src="./assets/8筒.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
+                <div class="three-d"
+                    style="width: var(--piece-width); height: var(--piece-height); transform: translate(0px, calc(0px - var(--piece-stride) * 2)) translate(20px, -60px) rotateZ(-90deg); ">
+                    <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
 
+                <div class="three-d"
+                    style="width: var(--piece-width); height: var(--piece-height); transform: translate(0px, calc(0px - var(--piece-stride) * 3)) translate(20px, -60px) rotateZ(-90deg); ">
+                    <div class="face face1"><img src="./assets/4筒.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
 
-            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
-            transform:
-            translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 2)) 
-            translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
-            ">
-                <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
+                <div class="three-d"
+                    style="width: var(--piece-width); height: var(--piece-height); transform: translate(0px, calc(0px - var(--piece-stride) * 4)) translate(20px, -60px) rotateZ(-90deg); ">
+                    <div class="face face1"><img src="./assets/1萬.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
 
-
-            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
-            transform: 
-            translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 3)) 
-            translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
-            ">
-                <div class="face face1"><img src="./assets/4筒.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
-            transform: 
-            translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 4)) 
-            translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
-            ">
-                <div class="face face1"><img src="./assets/1萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
-            transform:
-            translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 5)) 
-            translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
-            ">
+                <div class="three-d"
+                style="width: var(--piece-width); height: var(--piece-height); transform: translate(0px, calc(0px - var(--piece-stride) * 5)) translate(20px, -60px) rotateZ(-90deg); ">
                 <div class="face face1"><img src="./assets/1筒.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -181,9 +160,7 @@ translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の�
                 <div class="face side-faceC"></div>
                 <div class="face side-faceD"></div>
             </div>
-
-
-            <!-- ↑ 以上、下家。-->
+            </div><!-- div#下家-河 -->
 
             <!-- ↓ 以下、対面。 -->
 
@@ -330,6 +307,16 @@ translate(-70px, -10px) rotateZ(90deg);">
 
             <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 5) )
         translate(-70px, -10px) rotateZ(90deg);">
+                <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
+                <div class="face face2"></div>
+                <div class="face side-faceA"></div>
+                <div class="face side-faceB"></div>
+                <div class="face side-faceC"></div>
+                <div class="face side-faceD"></div>
+            </div>
+
+            <div class="three-d" style="width: var(--piece-width); height: var(--piece-height); transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 5) )
+            translate(-60px, -20px) rotateZ(90deg);">
                 <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>

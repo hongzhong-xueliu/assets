@@ -6,11 +6,6 @@
 }
 
 /* piece: 4 units x 6 units x 8 unit */
-.piece {
-    width: var(--piece-height); /* 意図的 */
-    height: var(--piece-height);
-    transform-style: preserve-3d;
-}
 
 .face {
     display: flex;
