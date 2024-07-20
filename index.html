@@ -6,8 +6,8 @@
         :root {
             --piece-margin: var(--unit) / 2;
             --piece-stride: calc(var(--piece-width) + var(--piece-margin));
-            --河-center-y: 330px;
-            --河-center-x: 445px;
+            --河-center-y: 450px;
+            --河-center-x: 450px;
 
             /* 「自分の河の右上」と「下家の河の（自分から見た）左下の間」をどれくらい離すか */
             --corner-margin: 20px;
@@ -31,7 +31,7 @@
 
 <body style="background-color: #3f7528;">
     <div style="perspective: 2400px; position: relative;">
-        <div id="river" style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+        <div id="river" style="transform-style: preserve-3d; position: absolute;
         transform: rotate3d(1, 0, 0, 50deg)">
             <!-- ↓ 以下、自家 -->
 
