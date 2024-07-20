@@ -26,17 +26,22 @@
             --上家-right: calc(var(--河-center-x) - var(--each-河-width) / 2 - var(--corner-margin));
             --上家-top: calc(var(--河-center-y) - var(--each-河-width) / 2);
         }
+
+        .three-d {
+            transform-style: preserve-3d;
+            position: absolute;
+        }
     </style>
 </head>
 
 <body style="background-color: #3f7528;">
     <div style="perspective: 2400px; position: relative;">
-        <div id="river" style="transform-style: preserve-3d; position: absolute;
+        <div id="river" class="three-d" style="
         transform: rotate3d(1, 0, 0, 50deg)">
             <!-- ↓ 以下、自家 -->
 
-            <div
-                style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(calc(var(--自家-left) + var(--piece-stride) * 0), var(--自家-top));">
+            <div class="three-d"
+                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 0), var(--自家-top));">
                 <div class="face face1"><img src="./assets/5筒.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -46,8 +51,8 @@
             </div>
 
 
-            <div
-                style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(calc(var(--自家-left) + var(--piece-stride) * 1), var(--自家-top));">
+            <div class="three-d"
+                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 1), var(--自家-top));">
                 <div class="face face1"><img src="./assets/8索.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -57,8 +62,8 @@
             </div>
 
 
-            <div
-                style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(calc(var(--自家-left) + var(--piece-stride) * 2), var(--自家-top));">
+            <div class="three-d"
+                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 2), var(--自家-top));">
                 <div class="face face1"><img src="./assets/7索.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -67,8 +72,8 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(calc(var(--自家-left) + var(--piece-stride) * 3), var(--自家-top));">
+            <div class="three-d"
+                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 3), var(--自家-top));">
                 <div class="face face1"><img src="./assets/3索.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -77,8 +82,8 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(calc(var(--自家-left) + var(--piece-stride) * 4), var(--自家-top));">
+            <div class="three-d"
+                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 4), var(--自家-top));">
                 <div class="face face1"><img src="./assets/1索.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -88,8 +93,8 @@
             </div>
 
 
-            <div
-                style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(calc(var(--自家-left) + var(--piece-stride) * 5), var(--自家-top));">
+            <div class="three-d"
+                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 5), var(--自家-top));">
                 <div class="face face1"><img src="./assets/6筒.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -103,7 +108,7 @@
 
             <!-- ↓ 以下、下家 -->
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
 transform: 
 translate(var(--下家-left), var(--下家-bottom)) 
 translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
@@ -116,7 +121,7 @@ translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の�
                 <div class="face side-faceD"></div>
             </div>
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
             transform:
             translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 1)) 
             translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
@@ -130,7 +135,7 @@ translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の�
             </div>
 
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
             transform:
             translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 2)) 
             translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
@@ -144,7 +149,7 @@ translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の�
             </div>
 
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
             transform: 
             translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 3)) 
             translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
@@ -157,7 +162,7 @@ translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の�
                 <div class="face side-faceD"></div>
             </div>
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
             transform: 
             translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 4)) 
             translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
@@ -170,7 +175,7 @@ translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の�
                 <div class="face side-faceD"></div>
             </div>
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
             transform:
             translate(var(--下家-left), calc(var(--下家-bottom) - var(--piece-stride) * 5)) 
             translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。10px とは (height - width)/2、70px とは (height + width)/2 */
@@ -188,7 +193,7 @@ translate(10px, -70px) rotateZ(-90deg); /* 牌中心で回転した後、牌の�
 
             <!-- ↓ 以下、対面。 -->
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
 transform: translate(calc(var(--対面-right) - var(--piece-stride) * 0), var(--対面-bottom)) 
 translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotateZ(-180deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。*/
 ">
@@ -203,7 +208,7 @@ translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotat
 
 
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
 transform: translate(calc(var(--対面-right) - var(--piece-stride) * 1), var(--対面-bottom)) 
 translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotateZ(-180deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。*/
 ">
@@ -217,7 +222,7 @@ translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotat
 
 
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
 transform: translate(calc(var(--対面-right) - var(--piece-stride) * 2), var(--対面-bottom)) 
 translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotateZ(-180deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。*/
 ">
@@ -230,7 +235,7 @@ translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotat
             </div>
 
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
 transform: translate(calc(var(--対面-right) - var(--piece-stride) * 3), var(--対面-bottom)) 
 translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotateZ(-180deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。*/
 ">
@@ -242,7 +247,7 @@ translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotat
                 <div class="face side-faceD"></div>
             </div>
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
 transform: translate(calc(var(--対面-right) - var(--piece-stride) * 4), var(--対面-bottom)) 
 translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotateZ(-180deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。*/
 ">
@@ -255,7 +260,7 @@ translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotat
             </div>
 
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute;
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); 
 transform: translate(calc(var(--対面-right) - var(--piece-stride) * 5), var(--対面-bottom)) 
 translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotateZ(-180deg); /* 牌中心で回転した後、牌の左上を原点とするための補正。*/
 ">
@@ -279,7 +284,7 @@ translate(calc(0px - var(--piece-width)), calc(0px - var(--piece-height))) rotat
 
             <!-- ↓ 以下、上家。 -->
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 0) )
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 0) )
 translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face face1"><img src="./assets/6索.png" height="80"></div>
                 <div class="face face2"></div>
@@ -289,7 +294,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 1) )
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 1) )
 translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face face1"><img src="./assets/4筒.png" height="80"></div>
                 <div class="face face2"></div>
@@ -299,7 +304,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 2) )
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 2) )
 translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face face1"><img src="./assets/5筒.png" height="80"></div>
                 <div class="face face2"></div>
@@ -308,7 +313,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceC"></div>
                 <div class="face side-faceD"></div>
             </div>
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 3) )
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 3) )
          translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face face1"><img src="./assets/7筒.png" height="80"></div>
                 <div class="face face2"></div>
@@ -319,7 +324,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 4) )
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 4) )
 translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
                 <div class="face face2"></div>
@@ -329,7 +334,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div style="width: var(--piece-height); height: var(--piece-height); transform-style: preserve-3d; position: absolute; transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 5) )
+            <div class="three-d" style="width: var(--piece-height); height: var(--piece-height); transform: translate(var(--上家-right), calc(var(--上家-top) + var(--piece-stride) * 5) )
         translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
                 <div class="face face2"></div>
@@ -343,8 +348,8 @@ translate(-70px, -10px) rotateZ(90deg);">
 
     <div style="perspective: 1200px; position: relative;">
         <!-- ↓ 以下、自家手牌 -->
-        <div style="transform-style: preserve-3d; position: absolute; transform: rotate3d(1, 0, 0, 2deg)">
-            <div style="transform-style: preserve-3d; transform: translate(30px, 700px);">
+        <div class="three-d" style=" transform: rotate3d(1, 0, 0, 2deg)">
+            <div class="three-d" style="transform: translate(30px, 700px);">
                 <div class="face face1"><img src="./assets/2萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -354,7 +359,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 1 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 1 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -364,7 +369,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 2 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 2 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -374,7 +379,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 3 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 3 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -384,7 +389,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 4 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 4 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -394,7 +399,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 5 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 5 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -404,7 +409,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 6 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 6 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -414,7 +419,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 7 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 7 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/7萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -424,7 +429,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 8 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 8 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -434,7 +439,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 9 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 9 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -444,7 +449,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 10 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 10 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -454,7 +459,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 11 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 11 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/9萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -464,7 +469,7 @@ translate(-70px, -10px) rotateZ(90deg);">
             </div>
 
             <div
-                style="transform-style: preserve-3d; transform: translate(calc(30px + 12 * var(--piece-stride)), 700px);">
+                class="three-d" style="transform: translate(calc(30px + 12 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/1索.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
