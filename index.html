@@ -38,73 +38,67 @@
     <div style="perspective: 2400px; position: relative;">
         <div id="river" class="three-d" style="
         transform: rotate3d(1, 0, 0, 50deg)">
-            <!-- ↓ 以下、自家 -->
+            <div id="自家-河" class="three-d" style="transform: translate(var(--自家-left), var(--自家-top));">
+                <div class="three-d"
+                    style="width: var(--piece-height); height: var(--piece-height); transform: translateX(calc(var(--piece-stride) * 0));">
+                    <div class="face face1"><img src="./assets/5筒.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
 
-            <div class="three-d"
-                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 0), var(--自家-top));">
-                <div class="face face1"><img src="./assets/5筒.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
+                <div class="three-d"
+                    style="width: var(--piece-height); height: var(--piece-height); transform: translateX(calc(var(--piece-stride) * 1));">
+                    <div class="face face1"><img src="./assets/8索.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
 
+                <div class="three-d"
+                    style="width: var(--piece-height); height: var(--piece-height); transform: translateX(calc(var(--piece-stride) * 2));">
+                    <div class="face face1"><img src="./assets/7索.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
 
-            <div class="three-d"
-                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 1), var(--自家-top));">
-                <div class="face face1"><img src="./assets/8索.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
+                <div class="three-d"
+                    style="width: var(--piece-height); height: var(--piece-height); transform: translateX(calc(var(--piece-stride) * 3));">
+                    <div class="face face1"><img src="./assets/3索.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
 
+                <div class="three-d"
+                    style="width: var(--piece-height); height: var(--piece-height); transform: translateX(calc(var(--piece-stride) * 4));">
+                    <div class="face face1"><img src="./assets/1索.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
 
-            <div class="three-d"
-                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 2), var(--自家-top));">
-                <div class="face face1"><img src="./assets/7索.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d"
-                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 3), var(--自家-top));">
-                <div class="face face1"><img src="./assets/3索.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d"
-                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 4), var(--自家-top));">
-                <div class="face face1"><img src="./assets/1索.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-
-            <div class="three-d"
-                style="width: var(--piece-height); height: var(--piece-height); transform: translate(calc(var(--自家-left) + var(--piece-stride) * 5), var(--自家-top));">
-                <div class="face face1"><img src="./assets/6筒.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <!-- ↑ 以上、自家 -->
-
+                <div class="three-d"
+                    style="width: var(--piece-height); height: var(--piece-height); transform: translateX(calc(var(--piece-stride) * 5));">
+                    <div class="face face1"><img src="./assets/6筒.png" height="80"></div>
+                    <div class="face face2"></div>
+                    <div class="face side-faceA"></div>
+                    <div class="face side-faceB"></div>
+                    <div class="face side-faceC"></div>
+                    <div class="face side-faceD"></div>
+                </div>
+            </div><!-- div#自家-河 -->
 
             <!-- ↓ 以下、下家 -->
 
@@ -358,8 +352,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 1 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 1 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -368,8 +361,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 2 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 2 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -378,8 +370,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 3 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 3 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -388,8 +379,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 4 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 4 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -398,8 +388,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 5 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 5 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -408,8 +397,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 6 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 6 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -418,8 +406,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 7 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 7 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/7萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -428,8 +415,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 8 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 8 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -438,8 +424,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 9 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 9 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -448,8 +433,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 10 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 10 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -458,8 +442,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 11 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 11 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/9萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -468,8 +451,7 @@ translate(-70px, -10px) rotateZ(90deg);">
                 <div class="face side-faceD"></div>
             </div>
 
-            <div
-                class="three-d" style="transform: translate(calc(30px + 12 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 12 * var(--piece-stride)), 700px);">
                 <div class="face face1"><img src="./assets/1索.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
