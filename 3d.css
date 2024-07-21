@@ -3,6 +3,7 @@
     --unit: 10px;
     --piece-width: calc(6 * var(--unit));
     --piece-height: calc(8 * var(--unit));
+    --ad-hoc-offset: calc((var(--piece-height) - var(--piece-width)) / 2);
 }
 
 /* piece: 4 units x 6 units x 8 unit */
@@ -26,7 +27,7 @@
 
 .face1 {
     width: var(--piece-width);
-    transform: translateX(calc(1 * var(--unit))) translateZ(calc(4 * var(--unit)));
+    transform: translateX(calc(1 * var(--ad-hoc-offset))) translateZ(calc(var(--piece-height) / 2));
     background: white;
     /* so as to hide the back face even when the image is not loaded yet */
 }
@@ -34,27 +35,27 @@
 .face2 {
     width: var(--piece-width);
     background: hsl(234, 73%, 58%);
-    transform: rotateY(180deg) translateX(calc(-1 * var(--unit)))
+    transform: rotateY(180deg) translateX(calc(-1 * var(--ad-hoc-offset)))
 }
 
 .side-faceA {
     background: var(--side);
-    transform: rotateX(-90deg) rotateY(90deg) translateZ(calc(3 * var(--unit)))
+    transform: rotateX(-90deg) rotateY(90deg) translateZ(calc(var(--piece-width) / 2))
 }
 
 .side-faceB {
     width: var(--piece-width);
     background: var(--side);
-    transform: rotateY(180deg) rotateX(90deg) translateX(calc(-1 * var(--unit))) translateZ(calc(4 * var(--unit)))
+    transform: rotateY(180deg) rotateX(90deg) translateX(calc(-1 * var(--ad-hoc-offset))) translateZ(calc(var(--piece-height) / 2))
 }
 
 .side-faceC {
     background: var(--side);
-    transform: rotateX(-90deg) rotateY(-90deg) translateZ(calc(3 * var(--unit)))
+    transform: rotateX(-90deg) rotateY(-90deg) translateZ(calc(var(--piece-width) / 2))
 }
 
 .side-faceD {
     width: var(--piece-width);
     background: var(--side);
-    transform: rotateX(-90deg) translateX(calc(1 * var(--unit))) translateZ(calc(4 * var(--unit)));
+    transform: rotateX(-90deg) translateX(calc(1 * var(--ad-hoc-offset))) translateZ(calc(var(--piece-height) / 2));
 }
