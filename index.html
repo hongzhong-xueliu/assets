@@ -17,8 +17,8 @@
         </div>
     </template>
 
-    <div style="perspective: 2400px; position: relative;">
-        <div id="river" class="three-d" style="transform: rotate3d(1, 0, 0, 50deg)">
+    <div id="麻雀卓" style="perspective: 2400px; position: relative;">
+        <div id="全員-河" class="three-d" style="transform: rotate3d(1, 0, 0, 50deg)">
             <div id="自家-河" class="three-d" style="transform: translate(var(--自家-left), var(--自家-top));">
             </div>
             <div id="下家-河" class="three-d"
@@ -35,75 +35,54 @@
 
     <script>
         const pieceTemplate = document.getElementById('piece-template');
-        const river = document.getElementById('river');
+        const river = document.getElementById('全員-河');
 
         const 自家河 = document.getElementById('自家-河');
         const 下家河 = document.getElementById('下家-河');
         const 対面河 = document.getElementById('対面-河');
         const 上家河 = document.getElementById('上家-河');
 
-        const pieces = [
-            [自家河, 0, 0, "5筒"],
-            [自家河, 1, 0, "8索"],
-            [自家河, 2, 0, "7索"],
-            [自家河, 3, 0, "3索"],
-            [自家河, 4, 0, "1索"],
-            [自家河, 5, 0, "6筒"],
-
-            [下家河, 0, 0, "8萬"],
-            [下家河, 1, 0, "8筒"],
-            [下家河, 2, 0, "4萬"],
-            [下家河, 3, 0, "4筒"],
-            [下家河, 4, 0, "1萬"],
-            [下家河, 5, 0, "1筒"],
-
-            [対面河, 0, 0, "9筒"],
-            [対面河, 1, 0, "4筒"],
-            [対面河, 2, 0, "8筒"],
-            [対面河, 3, 0, "6索"],
-            [対面河, 4, 0, "3索"],
-            [対面河, 5, 0, "1筒"],
-
-            [上家河, 0, 0, "6索"],
-            [上家河, 1, 0, "4筒"],
-            [上家河, 2, 0, "5筒"],
-            [上家河, 3, 0, "7筒"],
-            [上家河, 4, 0, "3萬"],
-            [上家河, 5, 0, "6萬"],
+        const rivers = [
+            {
+                dom: 自家河,
+                pieces: ["9萬", "3萬", "1萬", "5萬", "1索", "2索", "4索", "6索", "1萬", "7索", "7索", "7萬"],
+            },
+            {
+                dom: 下家河,
+                pieces: ["3萬", "5萬", "7萬", "2萬", "4索", "2索", "2索", "7索", "8索", "3索", "4索"],
+            },
+            {
+                dom: 対面河,
+                pieces: ["3萬", "1萬", "5萬", "9索", "4索", "1索", "7萬", "6索", "6索", "9索", "6索", "1索"],
+            },
+            {
+                dom: 上家河,
+                pieces: ["4筒", "9索", "1索", "5索", "5索", "3萬", "1萬", "9索", "7索", "7萬", "4索", "5索", "4筒", "5索"],
+            },
         ];
 
-        pieces.forEach(([river, x, y, identity]) => {
-            const piece = pieceTemplate.content.cloneNode(true).children[0];
-            piece.style.transform = `translateX(calc(var(--piece-horizontal-stride) * ${x})) translateY(calc(var(--piece-vertical-stride) * ${y}))`;
-            piece.querySelector('img').src = `./assets/${identity}.png`;
-            river.appendChild(piece);
+        rivers.forEach(({ dom, pieces }) => {
+            pieces.forEach((identity, index) => {
+                const column = index % 6;
+                const row = Math.floor(index / 6);
+                const piece = pieceTemplate.content.cloneNode(true).children[0];
+                piece.style.transform = `translateX(calc(var(--piece-horizontal-stride) * ${column})) translateY(calc(var(--piece-vertical-stride) * ${row}))`;
+                piece.querySelector('img').src = `./assets/${identity}.png`;
+                dom.appendChild(piece);
+            });
         });
     </script>
 
     <div style="perspective: 1200px; position: relative;">
-        <div class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(30px, 700px)" id="自家-手牌">
+        <div id="自家-手牌" class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(130px, 800px)">
         </div>
     </div>
 
     <script>
         const 自家手牌 = document.getElementById('自家-手牌');
-        const 自家手牌pieces = [
-            [0, "2萬"],
-            [1, "3萬"],
-            [2, "3萬"],
-            [3, "4萬"],
-            [4, "5萬"],
-            [5, "5萬"],
-            [6, "5萬"],
-            [7, "7萬"],
-            [8, "8萬"],
-            [9, "8萬"],
-            [10, "8萬"],
-            [11, "9萬"],
-            [12, "1索"],
-        ];
+        const 自家手牌pieces = ["1筒", "1筒", "1筒", "3筒", "3筒", "6筒", "6筒", "7筒", "9筒", "9筒", "9筒", "中", "中"];
 
-        自家手牌pieces.forEach(([x, identity]) => {
+        自家手牌pieces.forEach((identity, x) => {
             const piece = pieceTemplate.content.cloneNode(true).children[0];
             piece.style.transform = `translateX(calc(var(--piece-horizontal-stride) * ${x}))`;
             piece.querySelector('img').src = `./assets/${identity}.png`;
