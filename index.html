@@ -49,7 +49,7 @@
             },
             {
                 dom: 下家河,
-                pieces: ["3萬", "5萬", "7萬", "2萬", "4索", "2索", "2索", "7索", "8索", "3索", "4索"],
+                pieces: ["3萬", "5萬", "7萬", "2萬", "4索", "2索", "2索", "7索", "8索", "3索", "4萬"],
             },
             {
                 dom: 対面河,
@@ -76,17 +76,35 @@
     <div style="perspective: 1200px; position: relative;">
         <div id="自家-手牌" class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(130px, 800px)">
         </div>
+
+        <div id="上家-手牌" class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(130px, 925px)">
+        </div>
+
+        <div id="対面-手牌" class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(130px, 1050px)">
+        </div>
+
+        <div id="下家-手牌" class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(130px, 1175px)">
+        </div>
     </div>
 
     <script>
         const 自家手牌 = document.getElementById('自家-手牌');
-        const 自家手牌pieces = ["1筒", "1筒", "1筒", "3筒", "3筒", "6筒", "6筒", "7筒", "9筒", "9筒", "9筒", "中", "中"];
-
-        自家手牌pieces.forEach((identity, x) => {
-            const piece = pieceTemplate.content.cloneNode(true).children[0];
-            piece.style.transform = `translateX(calc(var(--piece-horizontal-stride) * ${x}))`;
-            piece.querySelector('img').src = `./assets/${identity}.png`;
-            自家手牌.appendChild(piece);
+        const 上家手牌 = document.getElementById('上家-手牌');
+        const 対面手牌 = document.getElementById('対面-手牌');
+        const 下家手牌 = document.getElementById('下家-手牌');
+        const 手牌s = [
+            { dom: 自家手牌, pieces: ["1筒", "1筒", "1筒", "3筒", "3筒", "6筒", "6筒", "7筒", "9筒", "9筒", "9筒", "中", "中"] },
+            { dom: 上家手牌, pieces: ["2萬", "2萬", "2萬", "4萬", "4萬", "4萬", "6萬", "8萬", "8萬", "8萬", "9萬", "9萬", "9萬"] },
+            { dom: 対面手牌, pieces: ["1筒", "2筒", "2筒", "2筒", "2筒", "3筒", "8筒", "8筒", "8筒", "8筒", "9筒", "8索", "中"] },
+            { dom: 下家手牌, pieces: ["3筒", "4筒", "5筒", "5筒", "5筒", "6筒", "6筒", "7筒", "7筒", "2索", "3索", "3索", "中"] },
+        ];
+        手牌s.forEach(({ dom, pieces }) => {
+            pieces.forEach((identity, x) => {
+                const piece = pieceTemplate.content.cloneNode(true).children[0];
+                piece.style.transform = `translateX(calc(var(--piece-horizontal-stride) * ${x}))`;
+                piece.querySelector('img').src = `./assets/${identity}.png`;
+                dom.appendChild(piece);
+            });
         });
 
     </script>
