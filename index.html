@@ -6,6 +6,7 @@
         :root {
             --piece-margin: var(--unit) / 2;
             --piece-stride: calc(var(--piece-width) + var(--piece-margin));
+            --piece-vertical-stride: calc(var(--piece-height) + var(--piece-margin));
             --河-center-y: 450px;
             --河-center-x: 450px;
 
@@ -35,238 +36,79 @@
 </head>
 
 <body style="background-color: #3f7528;">
+    <template id="piece-on-river">
+        <div class="three-d piece-obj">
+            <div class="face face1"><img src="./assets/5筒.png" height="80"></div>
+            <div class="face face2"></div>
+            <div class="face side-faceA"></div>
+            <div class="face side-faceB"></div>
+            <div class="face side-faceC"></div>
+            <div class="face side-faceD"></div>
+        </div>
+    </template>
+
     <div style="perspective: 2400px; position: relative;">
         <div id="river" class="three-d" style="transform: rotate3d(1, 0, 0, 50deg)">
             <div id="自家-河" class="three-d" style="transform: translate(var(--自家-left), var(--自家-top));">
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 0));">
-                    <div class="face face1"><img src="./assets/5筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 1));">
-                    <div class="face face1"><img src="./assets/8索.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 2));">
-                    <div class="face face1"><img src="./assets/7索.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 3));">
-                    <div class="face face1"><img src="./assets/3索.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 4));">
-                    <div class="face face1"><img src="./assets/1索.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 5));">
-                    <div class="face face1"><img src="./assets/6筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-            </div><!-- div#自家-河 -->
-
-            <div id="下家-河" class="three-d" style="transform: translate(var(--下家-left), var(--下家-bottom)) rotateZ(-90deg);">
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 0)); ">
-                    <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d piece-obj" style="transform:translateX(calc(var(--piece-stride) * 1));">
-                    <div class="face face1"><img src="./assets/8筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 2));">
-                    <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 3));">
-                    <div class="face face1"><img src="./assets/4筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 4));">
-                    <div class="face face1"><img src="./assets/1萬.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d piece-obj" style="transform: translateX(calc(var(--piece-stride) * 5));">
-                    <div class="face face1"><img src="./assets/1筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-            </div><!-- div#下家-河 -->
-
-            <div id="対面-河" class="three-d" style="transform: translate(var(--対面-right), var(--対面-bottom)) rotateZ(-180deg);">
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 0));">
-                    <div class="face face1"><img src="./assets/9筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 1));">
-                    <div class="face face1"><img src="./assets/4筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 2));">
-
-                    <div class="face face1"><img src="./assets/8筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 3));">
-                    <div class="face face1"><img src="./assets/6索.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 4));">
-                    <div class="face face1"><img src="./assets/3索.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 5));">
-                    <div class="face face1"><img src="./assets/1筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-            </div><!-- div#対面-河 -->
-
-
-            <div id="上家-河" class="three-d" style="transform: translate(var(--上家-right), var(--上家-top)) rotateZ(-270deg);">
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 0));">
-                    <div class="face face1"><img src="./assets/6索.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 1));">
-                    <div class="face face1"><img src="./assets/4筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 2));">
-                    <div class="face face1"><img src="./assets/5筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 3));">
-                    <div class="face face1"><img src="./assets/7筒.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 4))">
-                    <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-
-
-                <div class="three-d" class="piece-obj" style="transform: translateX(calc(var(--piece-stride) * 5))">
-                    <div class="face face1"><img src="./assets/6萬.png" height="80"></div>
-                    <div class="face face2"></div>
-                    <div class="face side-faceA"></div>
-                    <div class="face side-faceB"></div>
-                    <div class="face side-faceC"></div>
-                    <div class="face side-faceD"></div>
-                </div>
-            </div><!-- div#上家-河 -->
+            </div>
+            <div id="下家-河" class="three-d"
+                style="transform: translate(var(--下家-left), var(--下家-bottom)) rotateZ(-90deg);">
+            </div>
+            <div id="対面-河" class="three-d"
+                style="transform: translate(var(--対面-right), var(--対面-bottom)) rotateZ(-180deg);">
+            </div>
+            <div id="上家-河" class="three-d"
+                style="transform: translate(var(--上家-right), var(--上家-top)) rotateZ(-270deg);">
+            </div>
         </div>
     </div>
+
+    <script>
+        const pieceOnRiver = document.getElementById('piece-on-river');
+        const river = document.getElementById('river');
+
+        const 自家河 = document.getElementById('自家-河');
+        const 下家河 = document.getElementById('下家-河');
+        const 対面河 = document.getElementById('対面-河');
+        const 上家河 = document.getElementById('上家-河');
+
+        const pieces = [
+            [自家河, 0, 0, "5筒"],
+            [自家河, 1, 0, "8索"],
+            [自家河, 2, 0, "7索"],
+            [自家河, 3, 0, "3索"],
+            [自家河, 4, 0, "1索"],
+            [自家河, 5, 0, "6筒"],
+
+            [下家河, 0, 0, "8萬"],
+            [下家河, 1, 0, "8筒"],
+            [下家河, 2, 0, "4萬"],
+            [下家河, 3, 0, "4筒"],
+            [下家河, 4, 0, "1萬"],
+            [下家河, 5, 0, "1筒"],
+
+            [対面河, 0, 0, "9筒"],
+            [対面河, 1, 0, "4筒"],
+            [対面河, 2, 0, "8筒"],
+            [対面河, 3, 0, "6索"],
+            [対面河, 4, 0, "3索"],
+            [対面河, 5, 0, "1筒"],
+
+            [上家河, 0, 0, "6索"],
+            [上家河, 1, 0, "4筒"],
+            [上家河, 2, 0, "5筒"],
+            [上家河, 3, 0, "7筒"],
+            [上家河, 4, 0, "3萬"],
+            [上家河, 5, 0, "6萬"],
+        ];
+
+        pieces.forEach(([river, x, y, identity]) => {
+            const piece = pieceOnRiver.content.cloneNode(true).children[0];
+            piece.style.transform = `translateX(calc(var(--piece-stride) * ${x})) translateY(calc(var(--piece-vertical-stride) * ${y}))`;
+            piece.querySelector('img').src = `./assets/${identity}.png`;
+            river.appendChild(piece);
+        });
+    </script>
 
     <div style="perspective: 1200px; position: relative;">
         <!-- ↓ 以下、自家手牌 -->
