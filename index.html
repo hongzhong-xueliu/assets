@@ -6,7 +6,7 @@
 </head>
 
 <body style="background-color: #3f7528;">
-    <template id="piece-on-river">
+    <template id="piece-template">
         <div class="three-d piece-obj">
             <div class="face face1"><img src="./assets/5筒.png" height="80"></div>
             <div class="face face2"></div>
@@ -34,7 +34,7 @@
     </div>
 
     <script>
-        const pieceOnRiver = document.getElementById('piece-on-river');
+        const pieceTemplate = document.getElementById('piece-template');
         const river = document.getElementById('river');
 
         const 自家河 = document.getElementById('自家-河');
@@ -73,7 +73,7 @@
         ];
 
         pieces.forEach(([river, x, y, identity]) => {
-            const piece = pieceOnRiver.content.cloneNode(true).children[0];
+            const piece = pieceTemplate.content.cloneNode(true).children[0];
             piece.style.transform = `translateX(calc(var(--piece-horizontal-stride) * ${x})) translateY(calc(var(--piece-vertical-stride) * ${y}))`;
             piece.querySelector('img').src = `./assets/${identity}.png`;
             river.appendChild(piece);
@@ -81,125 +81,35 @@
     </script>
 
     <div style="perspective: 1200px; position: relative;">
-        <!-- ↓ 以下、自家手牌 -->
-        <div class="three-d" style=" transform: rotate3d(1, 0, 0, 2deg)">
-            <div class="three-d" style="transform: translate(30px, 700px);">
-                <div class="face face1"><img src="./assets/2萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 1 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 2 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 3 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 4 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 5 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 6 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 7 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/7萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 8 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 9 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 10 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 11 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/9萬.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
-
-            <div class="three-d" style="transform: translate(calc(30px + 12 * var(--piece-horizontal-stride)), 700px);">
-                <div class="face face1"><img src="./assets/1索.png" height="80"></div>
-                <div class="face face2"></div>
-                <div class="face side-faceA"></div>
-                <div class="face side-faceB"></div>
-                <div class="face side-faceC"></div>
-                <div class="face side-faceD"></div>
-            </div>
+        <div class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(30px, 700px)" id="自家-手牌">
         </div>
-
     </div>
+
+    <script>
+        const 自家手牌 = document.getElementById('自家-手牌');
+        const 自家手牌pieces = [
+            [0, "2萬"],
+            [1, "3萬"],
+            [2, "3萬"],
+            [3, "4萬"],
+            [4, "5萬"],
+            [5, "5萬"],
+            [6, "5萬"],
+            [7, "7萬"],
+            [8, "8萬"],
+            [9, "8萬"],
+            [10, "8萬"],
+            [11, "9萬"],
+            [12, "1索"],
+        ];
+
+        自家手牌pieces.forEach(([x, identity]) => {
+            const piece = pieceTemplate.content.cloneNode(true).children[0];
+            piece.style.transform = `translateX(calc(var(--piece-horizontal-stride) * ${x}))`;
+            piece.querySelector('img').src = `./assets/${identity}.png`;
+            自家手牌.appendChild(piece);
+        });
+
+    </script>
+
 </body>
