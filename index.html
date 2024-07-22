@@ -2,37 +2,7 @@
 
 <head>
     <link rel="stylesheet" href="3d.css">
-    <style>
-        :root {
-            --piece-margin: var(--unit) / 2;
-            --piece-stride: calc(var(--piece-width) + var(--piece-margin));
-            --piece-vertical-stride: calc(var(--piece-height) + var(--piece-margin));
-            --河-center-y: 450px;
-            --河-center-x: 450px;
-
-            /* 「自分の河の右上」と「下家の河の（自分から見た）左下の間」をどれくらい離すか */
-            --corner-margin: 20px;
-
-            --each-河-width: calc(6 * var(--piece-width) + 5 * var(--piece-margin));
-
-            --自家-top: calc(var(--河-center-y) + var(--each-河-width) / 2 + var(--corner-margin));
-            --自家-left: calc(var(--河-center-x) - var(--each-河-width) / 2 - var(--ad-hoc-offset));
-
-            --下家-left: calc(var(--河-center-x) + var(--each-河-width) / 2 + var(--corner-margin));
-            --下家-bottom: calc(var(--河-center-y) + var(--each-河-width) / 2 + var(--ad-hoc-offset));
-
-            --対面-bottom: calc(var(--河-center-y) - var(--each-河-width) / 2 - var(--corner-margin));
-            --対面-right: calc(var(--河-center-x) + var(--each-河-width) / 2 + var(--ad-hoc-offset));
-
-            --上家-right: calc(var(--河-center-x) - var(--each-河-width) / 2 - var(--corner-margin));
-            --上家-top: calc(var(--河-center-y) - var(--each-河-width) / 2 - var(--ad-hoc-offset));
-        }
-
-        .three-d {
-            transform-style: preserve-3d;
-            position: absolute;
-        }
-    </style>
+    <link rel="stylesheet" href="river.css">
 </head>
 
 <body style="background-color: #3f7528;">
@@ -104,7 +74,7 @@
 
         pieces.forEach(([river, x, y, identity]) => {
             const piece = pieceOnRiver.content.cloneNode(true).children[0];
-            piece.style.transform = `translateX(calc(var(--piece-stride) * ${x})) translateY(calc(var(--piece-vertical-stride) * ${y}))`;
+            piece.style.transform = `translateX(calc(var(--piece-horizontal-stride) * ${x})) translateY(calc(var(--piece-vertical-stride) * ${y}))`;
             piece.querySelector('img').src = `./assets/${identity}.png`;
             river.appendChild(piece);
         });
@@ -122,7 +92,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 1 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 1 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -131,7 +101,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 2 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 2 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/3萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -140,7 +110,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 3 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 3 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/4萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -149,7 +119,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 4 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 4 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -158,7 +128,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 5 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 5 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -167,7 +137,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 6 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 6 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/5萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -176,7 +146,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 7 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 7 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/7萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -185,7 +155,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 8 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 8 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -194,7 +164,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 9 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 9 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -203,7 +173,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 10 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 10 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/8萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -212,7 +182,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 11 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 11 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/9萬.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>
@@ -221,7 +191,7 @@
                 <div class="face side-faceD"></div>
             </div>
 
-            <div class="three-d" style="transform: translate(calc(30px + 12 * var(--piece-stride)), 700px);">
+            <div class="three-d" style="transform: translate(calc(30px + 12 * var(--piece-horizontal-stride)), 700px);">
                 <div class="face face1"><img src="./assets/1索.png" height="80"></div>
                 <div class="face face2"></div>
                 <div class="face side-faceA"></div>

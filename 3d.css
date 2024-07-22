@@ -6,6 +6,11 @@
     --ad-hoc-offset: calc((var(--piece-height) - var(--piece-width)) / 2);
 }
 
+.three-d {
+    transform-style: preserve-3d;
+    position: absolute;
+}
+
 /* piece: 4 units x 6 units x 8 unit */
 
 .piece-obj {
