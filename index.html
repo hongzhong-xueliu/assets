@@ -17,8 +17,8 @@
         </div>
     </template>
 
-    <div id="麻雀卓" style="perspective: 2400px; position: relative;">
-        <div id="全員-河" class="three-d" style="transform: rotate3d(1, 0, 0, 50deg)">
+    <div id="root" style="perspective: 3200px; position: relative;">
+        <div id="麻雀卓" class="three-d" style="transform: rotateX(50deg)">
             <div id="自家-河" class="three-d" style="transform: translate(var(--自家-left), var(--自家-top));">
             </div>
             <div id="下家-河" class="three-d"
@@ -30,12 +30,43 @@
             <div id="上家-河" class="three-d"
                 style="transform: translate(var(--上家-right), var(--上家-top)) rotateZ(-270deg);">
             </div>
+
+            <div id="自家-手牌" class="three-d" style="transform:
+                translate(
+                    calc(var(--自家-left) - var(--piece-horizontal-stride) * (13 - 6) / 2), 
+                    calc(var(--自家-top) + var(--piece-vertical-stride) * 4)
+                ) translateZ(calc(var(--piece-height))) rotateX(-90deg) ">
+            </div>
+
+            <div id="上家-手牌" class="three-d" style="transform: 
+                translate(
+                    calc(var(--上家-right) - var(--piece-vertical-stride) * 4),
+                    calc(var(--上家-top) - var(--piece-horizontal-stride) * (13 - 6) / 2)
+                ) rotateZ(90deg) translateZ(calc(var(--piece-height))) rotateX(-90deg) ">
+            </div>
+
+            <div id="対面-手牌" class="three-d" style="transform: 
+                translate(
+                    calc(var(--対面-right) + var(--piece-horizontal-stride) * (13 - 6) / 2), 
+                    calc(var(--対面-bottom) - var(--piece-vertical-stride) * 4)
+                ) rotateZ(180deg) translateZ(calc(var(--piece-height))) rotateX(-90deg)">
+            </div>
+
+            <div id="下家-手牌" class="three-d" style="transform: 
+                translate(
+                    calc(var(--下家-left) + var(--piece-vertical-stride) * 4),
+                    calc(var(--下家-bottom) + var(--piece-horizontal-stride) * (13 - 6) / 2)
+                ) rotateZ(270deg) translateZ(calc(var(--piece-height))) rotateX(-90deg)">
+            </div>
+
+
+
+
         </div>
     </div>
 
     <script>
         const pieceTemplate = document.getElementById('piece-template');
-        const river = document.getElementById('全員-河');
 
         const 自家河 = document.getElementById('自家-河');
         const 下家河 = document.getElementById('下家-河');
@@ -72,20 +103,6 @@
             });
         });
     </script>
-
-    <div style="perspective: 1200px; position: relative;">
-        <div id="自家-手牌" class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(130px, 800px)">
-        </div>
-
-        <div id="上家-手牌" class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(130px, 925px)">
-        </div>
-
-        <div id="対面-手牌" class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(130px, 1050px)">
-        </div>
-
-        <div id="下家-手牌" class="three-d" style="transform: rotate3d(1, 0, 0, 2deg) translate(130px, 1175px)">
-        </div>
-    </div>
 
     <script>
         const 自家手牌 = document.getElementById('自家-手牌');

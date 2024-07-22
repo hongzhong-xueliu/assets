@@ -2,8 +2,8 @@
     --piece-margin: var(--unit) / 2;
     --piece-horizontal-stride: calc(var(--piece-width) + var(--piece-margin));
     --piece-vertical-stride: calc(var(--piece-height) + var(--piece-margin));
-    --河-center-y: 450px;
-    --河-center-x: 550px;
+    --河-center-y: 850px;
+    --河-center-x: 900px;
 
     /* 「自分の河の右上」と「下家の河の（自分から見た）左下の間」をどれくらい離すか */
     --corner-margin: 20px;
