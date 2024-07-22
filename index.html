@@ -3,6 +3,34 @@
 <head>
     <link rel="stylesheet" href="3d.css">
     <link rel="stylesheet" href="river.css">
+    <style>
+        @keyframes 麻雀卓回転 {
+            0% {
+                transform:
+                    rotateX(50deg) translate(var(--河-center-x), var(--河-center-y)) rotateZ(0turn) translate(calc(-1 * var(--河-center-x)), calc(-1 * var(--河-center-y)));
+            }
+
+            25% {
+                transform:
+                    rotateX(50deg) translate(var(--河-center-x), var(--河-center-y)) rotateZ(0.25turn) translate(calc(-1 * var(--河-center-x)), calc(-1 * var(--河-center-y)));
+            }
+
+            50% {
+                transform:
+                    rotateX(50deg) translate(var(--河-center-x), var(--河-center-y)) rotateZ(0.5turn) translate(calc(-1 * var(--河-center-x)), calc(-1 * var(--河-center-y)));
+            }
+
+            75% {
+                transform:
+                    rotateX(50deg) translate(var(--河-center-x), var(--河-center-y)) rotateZ(0.75turn) translate(calc(-1 * var(--河-center-x)), calc(-1 * var(--河-center-y)));
+            }
+
+            100% {
+                transform:
+                    rotateX(50deg) translate(var(--河-center-x), var(--河-center-y)) rotateZ(1turn) translate(calc(-1 * var(--河-center-x)), calc(-1 * var(--河-center-y)));
+            }
+        }
+    </style>
 </head>
 
 <body style="background-color: #3f7528;">
@@ -18,7 +46,10 @@
     </template>
 
     <div id="root" style="perspective: 3200px; position: relative;">
-        <div id="麻雀卓" class="three-d" style="transform: rotateX(50deg)">
+        <div id="麻雀卓" class="three-d"
+            style="animation-name: 麻雀卓回転;
+            animation-duration: 8s;
+            animation-iteration-count: infinite;">
             <div id="自家-河" class="three-d" style="transform: translate(var(--自家-left), var(--自家-top));">
             </div>
             <div id="下家-河" class="three-d"
